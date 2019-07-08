@@ -1,0 +1,150 @@
+D:\PTTK PM\QLQCP\QLQCP\obj\Debug\QLQCP.csprojResolveAssemblyReference.cache
+D:\PTTK PM\QLQCP\QLQCP\bin\ApplicationInsights.config
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\csc.exe
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\System.Collections.Immutable.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\System.Reflection.Metadata.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\vbc.exe
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\VBCSCompiler.exe
+D:\PTTK PM\QLQCP\QLQCP\bin\roslyn\VBCSCompiler.exe.config
+D:\PTTK PM\QLQCP\QLQCP\bin\QLQCP.dll.config
+D:\PTTK PM\QLQCP\QLQCP\bin\QLQCP.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\QLQCP.pdb
+D:\PTTK PM\QLQCP\QLQCP\bin\EntityFramework.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\EntityFramework.SqlServer.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.Agent.Intercept.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.DependencyCollector.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.Web.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.WindowsServer.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.ApplicationInsights.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.Web.Infrastructure.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Helpers.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Mvc.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Razor.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Webpages.Deployment.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Webpages.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Webpages.Razor.dll
+D:\PTTK PM\QLQCP\QLQCP\bin\EntityFramework.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\EntityFramework.SqlServer.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.DependencyCollector.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.Web.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.AI.WindowsServer.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.ApplicationInsights.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Razor.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Webpages.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Webpages.Deployment.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Webpages.Razor.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Helpers.xml
+D:\PTTK PM\QLQCP\QLQCP\bin\System.Web.Mvc.xml
+D:\PTTK PM\QLQCP\QLQCP\obj\Debug\QLQCP.dll
+D:\PTTK PM\QLQCP\QLQCP\obj\Debug\QLQCP.pdb
+D:\PTTK PM\QLQCP - Copy\QLQCP\obj\Debug\QLQCP.csprojResolveAssemblyReference.cache
+D:\PTTK PM\QLQCP - Copy\QLQCP\obj\Debug\QLQCP.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\obj\Debug\QLQCP.pdb
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\ApplicationInsights.config
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\csc.exe
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\System.Collections.Immutable.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\System.Reflection.Metadata.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\vbc.exe
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\VBCSCompiler.exe
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\roslyn\VBCSCompiler.exe.config
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\QLQCP.dll.config
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\QLQCP.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\QLQCP.pdb
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\EntityFramework.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\EntityFramework.SqlServer.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.Agent.Intercept.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.DependencyCollector.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.Web.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.WindowsServer.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.ApplicationInsights.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.Web.Infrastructure.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Helpers.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Mvc.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Razor.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Webpages.Deployment.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Webpages.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Webpages.Razor.dll
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\EntityFramework.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\EntityFramework.SqlServer.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.DependencyCollector.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.Web.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.AI.WindowsServer.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.ApplicationInsights.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Razor.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Webpages.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Webpages.Deployment.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Webpages.Razor.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Helpers.xml
+D:\PTTK PM\QLQCP - Copy\QLQCP\bin\System.Web.Mvc.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\ApplicationInsights.config
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\csc.exe
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\System.Collections.Immutable.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\System.Reflection.Metadata.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\vbc.exe
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\VBCSCompiler.exe
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\roslyn\VBCSCompiler.exe.config
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\QLQCP.dll.config
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\QLQCP.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\QLQCP.pdb
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\EntityFramework.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\EntityFramework.SqlServer.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.Agent.Intercept.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.DependencyCollector.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.Web.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.WindowsServer.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.ApplicationInsights.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.Web.Infrastructure.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Helpers.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Mvc.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Razor.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Webpages.Deployment.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Webpages.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Webpages.Razor.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\EntityFramework.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\EntityFramework.SqlServer.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.DependencyCollector.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.Web.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.AI.WindowsServer.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.ApplicationInsights.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Razor.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Webpages.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Webpages.Deployment.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Webpages.Razor.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Helpers.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\bin\System.Web.Mvc.xml
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\obj\Debug\QLQCP.csprojResolveAssemblyReference.cache
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\obj\Debug\QLQCP.dll
+D:\PTTK PM\QLQCP - Copy - Copy\QLQCP\obj\Debug\QLQCP.pdb

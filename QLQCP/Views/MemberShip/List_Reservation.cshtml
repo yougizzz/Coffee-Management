@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "List_Reservation";
+}
+
+<div class="container" style="padding-top: 150px; padding-bottom: 150px;">
+    <br />
+    <h1 class="text-center" style="color:#b48f64">RESERVARTION LIST</h1><br />
+    <table class="table table-bordered table-responsive">
+        <tr>
+            <th>ID RESERVATION</th>
+            <th>ID TABLE</th>
+            <th>PHONE</th>
+            <th>FULL NAME</th>
+            <th>SEATS</th>
+            <th>ACTION</th>
+        </tr>
+        @if(ViewBag.Table != null)
+        {
+            foreach(var item in ViewBag.Table)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.id_table</td>
+                    <td>@item.customer_telephone</td>
+                    <td>@item.fullname</td>
+                    <td>@item.seats</td>
+
+                    <td>
+
+                       <a href="/MemberShip/Checkin_Table?Customer_Phone=@item.customer_telephone&ID=@item.id" class="btn btn-info">Check In</a>
+
+                        <a href="/MemberShip/Checkout_Table/@item.id_table" class="btn btn-success">Check Out</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

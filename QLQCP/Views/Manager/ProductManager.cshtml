@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "ProductManager";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/scripts/jquery-1.9.1.min.js"></script>
+<script src="~/scripts/Main.js"></script>
+<script src="~/scripts/CheckValidation.js"></script>
+
+<div  class="container" style="padding-bottom: 150px; padding-top: 150px;">
+    <br /><h2 class="text-center">PRODUCT MANGER</h2><br />
+    <div class="text-right">
+        <button id="btn-create-product" class="btn btn-info">Create Product</button><br />
+    </div><br />
+    <table class="table table-bordered table-responsive" id="table_product">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        @if(ViewBag.Product != null)
+        {
+            foreach(var item in ViewBag.Product)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.price €</td>
+                    <td>
+                        <img src="~/UploadFiles/@item.img_product" alt="Alternate Text" style="width: 100px; height: 100px;" />
+                        <button class="btn btn-warning" onclick="set_img('@item.id')">Change IMG</button>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-warning" onclick="set_product(@item.id)">Update</a>
+                        <a href="~/Manager/Delete_Product/@item.id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+
+
+
+
+<!--  Modal Create Product  -->
+<div class="modal" id="modal-create-product" style="width: 500px; margin-left: 400px;" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"  onclick="$('#modal-create-product').hide()">&times;</button>
+                <h4 class="modal-title text-center">CREATE PRODUCT</h4>
+            </div>
+            <div class="modal-body">
+                <form action="~/Manager/CreateProduct" method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <p class="text-center" style="color:red;" id="valid-create-product" hidden></p>
+                    <div class="input-group" style="margin-left:30px;margin-right: 30px;">
+                        <span class="input-group-addon">
+                            Name Product
+                        </span>
+                        <input type="text" id="txt-create-product" name="Name" class="form-control col-sm-7" value="" required />
+                    </div><br />
+
+                    <div class="input-group"  style="margin-left:30px;margin-right: 30px;">
+                        <span class="input-group-addon">Price</span>
+                        <input type="number" min="1" step="any" max="1000000" name="Price" class="form-control col-sm-7" value="" required />
+                    </div><br />
+
+                    <div class="input-group" style="margin-left:30px;margin-right: 30px;">
+                        <span class="input-group-addon" >Image</span>
+                        <input type="file" name="File" class="form-control col-sm-7" required value="" />
+                    </div><br />
+
+                    <div class="text-center">
+                        <input type="submit" id="btn-product" value="Create Product" class="btn btn-info" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+</div>
+
+
+<!-- Modal Update Product -->
+<div class="modal" id="modal-update-product" style="width: 500px; margin-left: 400px;" hidden>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" onclick="$('#modal-update-product').hide()">&times;</button>
+            <h4 class="modal-title text-center">UPDATE PRODUCT</h4>
+        </div>
+        <div class="modal-body">
+            <form action="~/Manager/UpdateProduct" method="post" class="form-horizontal">
+                <input type="hidden" name="Id" value="" id="Id_Product" />
+                <p class="text-center" style="color:red;" id="valid-update-product" hidden></p>
+                <div class="input-group" style="margin-left:30px;margin-right: 30px;">
+                    <span class="input-group-addon">
+                        Name Product
+                    </span>
+                    <input type="text" name="Name" id="txt-update-product" class="form-control col-sm-7" value="" required />
+                </div><br />
+
+                <div class="input-group" style="margin-left:30px; margin-right: 30px;">
+                    <span class="input-group-addon" style="margin-left:30px;">Price</span>
+                    <input type="number" id="Price" min="1" step="any" max="1000000" name="Price" class="form-control col-sm-7" value="" required />
+                </div><br />
+
+                <div class="text-center">
+                    <input type="submit" id="btn-update-product" value="Update Product" class="btn btn-info" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Update Image -->
+<div class="modal" id="modal-change-img" style="width: 400px; margin-left: 400px;" hidden >
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" onclick="$('#modal-change-img').hide()">&times;</button>
+            <h4 class="modal-title text-center">CHANGE IMAGE</h4><br />
+            <form action="~/Manager/Update_Image_Product" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="Id" value="" id="Id_Product_Image" />
+                <div class="input-group" style="margin-left:30px;margin-right:30px;">
+                    <span class="input-group-addon">
+                        Image
+                    </span>
+                    <input type="file" name="File"  class="form-control col-sm-7" value="" required />
+                </div><br />
+
+                <div class="text-center">
+                    <input type="submit" name="name" value="Change Image" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#btn-create-product').click(function () {
+            $('#modal-create-product').show();
+        });
+        $('#txt-create-product').change(function(){
+            var name = $('#txt-create-product').val();
+            check_product(name);
+        });
+        $('#txt-update-product').change(function () {
+            var name = $('#txt-update-product').val();
+            check_duplicate_product(name);
+        });
+    })
+</script>

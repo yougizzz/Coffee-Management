@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "MemberInformation";
+}
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container" style="padding-bottom: 100px; padding-top: 150px;">
+    <div class="row">
+        <div class="col-sm-4 text-center" style="color:#b48f64">
+            @if (ViewBag.Customer != null)
+            {
+                <h2>YOUR INFORMATION</h2><br />
+                <p>Full name: @ViewBag.Customer.fullname</p>
+                <p>Phone: @ViewBag.Customer.phone_number</p>
+                <p>Score: @ViewBag.Customer.score</p>
+                <p>Address: @ViewBag.Customer.address</p>
+            }
+        </div>
+
+        <div class="col-sm-8 text-center" style="color:#b48f64">
+            <div style="padding-bottom: 150px;">
+                <h2>YOUR TABLE RESERVATION</h2><br />
+                <table class="table table-bordered table-responsive">
+                    <tr>
+                        <th>ID RESERVATION</th>
+                        <th>ID TABLE</th>
+                        <th>FULL NAME</th>
+                        <th>SEATS</th>
+                        <th>ACTION</th>
+                    </tr>
+                    @if (ViewBag.Reservation != null)
+                    {
+                        foreach (var item in ViewBag.Reservation)
+                        {
+                            if (@item.cancel == false && @item.checkin == false)
+                            {
+                                <tr>
+                                    <td>@item.id</td>
+                                    <td>@item.id_table</td>
+                                    <td>@item.fullname</td>
+                                    <td>@item.seats</td>
+                                    <td>
+                                        <a href="~/MemberShip/Cancel_By_Customer?ID_Reservation=@item.id" class="btn" style="background-color: #b48f64; color: white">Cancel</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+                    }
+                </table>
+            </div>
+            
+            <div style="padding-bottom: 150px;">
+                <h2>HISTORY RESERVATION</h2><br />
+                <table class="table table-bordered table-responsive">
+                    <tr>
+                        <th>ID RESERVATION</th>
+                        <th>ID TABLE</th>
+                        <th>FULL NAME</th>
+                        <th>SEATS</th>
+                    </tr>
+                    @if (ViewBag.History != null)
+                    {
+                        foreach (var item in ViewBag.History)
+                        {
+                           
+                                <tr>
+                                    <td>@item.id</td>
+                                    <td>@item.id_table</td>
+                                    <td>@item.fullname</td>
+                                    <td>@item.seats</td>
+                                </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+

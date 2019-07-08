@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/CheckValidation.js"></script>
+    <script src="~/scripts/Main.js"></script>
+
+</head>
+<body style="padding-top:0; padding-bottom:0">
+    <div id="navbar" class="navbar navbar-fixed-top" style="background-image:url(../../UploadFiles/p2-background-img-1.jpg);  color:#b48f64">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-size: 18px;color:#b48f64" href="/Home/HomePAge" >Coffee 24H</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                @if (Session["id"] == null)
+                {
+                    <ul class="nav navbar-nav navbar-right" style="padding-right: 50px;">
+                        <li><a href="#intro" style="color:#b48f64">Article</a></li>
+                        <li><a href="#menu" style="color:#b48f64">Menu</a></li>
+                        @if (Session["name"] == null)
+                        {
+                            <li><a onclick="alert_login()" style="color:#b48f64">Table</a></li>
+                        }
+                        @if (Session["name"] != null)
+                        {
+                            <li><a onclick="get_all_table()"  style="color:#b48f64">Table</a></li>
+                        }
+                        <li><a href="#address" style="color:#b48f64">About Us</a></li>
+                        @if (Session["name"] == null )
+                        {
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#b48f64">
+                                    Member <span class="fa fa-angle-double-down"></span>
+                                </a>
+                                <ul class="dropdown-menu" style="background-image:url(../../UploadFiles/p2-background-img-1.jpg); border: none">
+                                    <li><a onclick="$('#modal-create-membership').show()" style="color:#b48f64;">Create MemberShip</a></li>
+                                    <li><a onclick="$('#modal-login-membership').show()" style="color:#b48f64;">Login For Customer</a></li>
+                                    <li><a href="/Home/Index" style="color:#b48f64;">Login For Staff</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (Session["member_id"] != null)
+                        {
+                            
+
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#b48f64">
+                                    @Session["name"] <span class="fa fa-angle-double-down"></span>
+                                </a>
+                                <ul class="dropdown-menu" style="background-image:url(../../UploadFiles/p2-background-img-1.jpg); border: none">
+                                    <li><a href="/Account/MemberInformation" style="color:#b48f64;">My Infomation</a></li>
+                                    <li><a href="/Account/MemberLogout" style="color:#b48f64"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                                </ul>
+                            </li>
+
+                        }
+                    </ul>
+                }
+                else
+                {
+                    if (Session["role"] != null && (string)Session["role"] == "Manager")
+                    {
+                        <ul class="nav navbar-nav">
+                            <li><a href="~/Account/AccountManager" style="color:#b48f64">Account Manager</a></li>
+                            <li><a href="~/Manager/ProductManager" style="color:#b48f64">Product Manager</a></li>
+                            <li><a href="~/Manager/TableManager" style="color:#b48f64">Table Manager</a></li>
+                            <li><a href="~/Account/AccountRestore" style="color:#b48f64">Account Restore</a></li>
+                            <li><a href="~/Manager/ProductRestore" style="color:#b48f64">Product Restore</a></li>
+                            <li><a href="~/MemberShip/HistoryReservation" style="color:#b48f64">History Reservation</a></li>
+                        </ul>
+                    }
+                    if (Session["id"] != null)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="~/MemberShip/List_Reservation" style="color:#b48f64">Table Reservation</a></li>
+                            <li><a href="#" id="change-pass" style="color:#b48f64">Change Pasword</a></li>
+                            <li><a href="~/Account/Logout" style="color:#b48f64"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                        </ul>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- MODAL MEMBERSHIP LOGIN  -->
+    <div class="modal" id="modal-login-membership" style="margin-left:400px; width: 400px;" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="$('#modal-login-membership').hide()">&times;</button>
+                <h3 class="modal-title text-center">LOGIN</h3>
+            </div>
+            <div class="modal-body">
+                <br />
+                <form action="/Account/MemberLogin" method="post" class="form-horizontal">
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon" style="margin-left:20px;">Phone Number</span>
+                        <input type="number" name="Phone" class="form-control col-sm-5" value="" required />
+                    </div><br />
+
+                    <div class="text-center">
+                        <input type="submit" id="btn-login-membership" name="name" value="Login" class="btn btn-info" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-change-pass" style="width: 400px; margin-left: 500px;" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="$('#modal-change-pass').hide()">&times;</button>
+                <h3 class="text-center">CHANGE PASSWORD</h3>
+            </div>
+            <div class="modal-body">
+                <form action="~/Account/ChangePassword" method="post">
+                    <input type="hidden" name="Username" value="@Session["id"]" />
+                    <div class="input-group">
+                        <span class="input-group-addon">Username</span>
+                        <input type="text" id="username" disabled class="form-control" value="@Session["id"]" />
+                    </div><br />
+
+                    <p style="color:red" class="text-center" id="validation-password" hidden></p>
+                    <div class="input-group">
+                        <span class="input-group-addon">Password</span>
+                        <input type="password" id="old-password"  class="form-control"  />
+                    </div><br />
+
+                    <div class="input-group">
+                        <span class="input-group-addon">New Password</span>
+                        <input type="password" name="Password" class="form-control" value="" />
+                    </div><br />
+
+                    <div class="text-center">
+                        <input type="submit" name="name"  id="btn-change-pass" class="btn btn-info" value="Change Password" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL BOOKING TABLE -->
+    <div class="modal" id="modal-booking-table" style="width: 400px; margin-left: 500px;" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="$('#modal-booking-table').hide()">&times;</button>
+                <h3 class="text-center" style="color:#b48f64">BOOK TABLE</h3>
+            </div>
+            <div class="modal-body text-center" style="color:#b48f64">
+                <table id="book_table" class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">SEATS</th>
+                            <th class="text-center">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        @RenderBody()
+
+        <footer id="address"  style="width:100%; height: 300px; background-image:url(../../UploadFiles/p2-background-img-1.jpg)">
+            <div class="container">
+                <br />
+                <h3 class="text-center" style="color:#b48f64">STORES</h3>
+                <br />
+                <div class="text-center">
+                    <img src="~/UploadFiles/title-separator.png" alt="Alternate Text" />
+                    <br /><br />
+                    <p style="color:#b48f64">155 Su Van Hanh, Ward 13, District 10, Ho Chi Minh City</p>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 text-center">
+                        <p style="padding-top:80px; color:#b48f64">Make By Us</p>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5 text-center">
+                        <span class="fa fa-2x fa-facebook-square" style="padding-top: 80px; padding-right: 20px; color:#b48f64"></span>
+                        <span class="fa fa-2x fa-instagram" style="padding-top: 80px; padding-right: 20px; color:#b48f64"></span>
+                        <span class="fa fa-2x fa-twitter" style="padding-top: 80px; padding-right: 20px; color:#b48f64"></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+            $('#change-pass').click(function () {
+                $('#modal-change-pass').show();
+            });
+            $('#old-password').change(function () {
+                var user = $('#username').val();
+                check_password(user);
+            });
+
+        });
+    </script>
+</body>
+</html>

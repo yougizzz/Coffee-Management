@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "AccountRestore";
+}
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container" style="padding-top: 150px; padding-bottom: 150px;">
+    <h2 class="text-center">LIST STAFF RESTORE</h2>
+    <br />
+   
+    <table class="table table-bordered table-responsive">
+        <tr class="text-center">
+            <th>ID</th>
+            <th>Fullname</th>
+            <th>Gender</th>
+            <th>ID Card</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        @if (ViewBag.Member != null)
+        {
+            foreach (var item in ViewBag.Member)
+            {
+                <tr>
+                    <td>@item.username</td>
+                    <td>@item.fullname</td>
+                    <td>@item.gender</td>
+                    <td>@item.id_card</td>
+                    <td>@item.phone</td>
+                    <td>@item.email</td>
+                    <td>
+                        <a href="~/Account/UndeleteMember/@item.username" class="btn btn-info">Restore</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

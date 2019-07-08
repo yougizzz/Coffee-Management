@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "ShowProduct";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/Main.js"></script>
+<script src="~/scripts/CheckValidation.js"></script>
+
+
+
+
+<br /><br /><br /><br />
+<div style="position:fixed; margin-left:0">
+    <button class="btn btn-info" id="btn-get-order">ORDER <span class="badge" id="cart-number"></span></button>
+</div>
+<div class="container" style="padding-bottom: 50px;">
+    <div class="row">
+        @if(ViewBag.Product != null)
+        {
+            foreach(var item in ViewBag.Product)
+            {
+                <div class="col-sm-4 text-center" style="margin-top: 100px;">
+                    <img  class="text-center" src="~/UploadFiles/@item.img_product" alt="Alternate Text" 
+                         style="width: 350px; height: 350px;" /><br />
+                    <h4 class="text-center">@item.name</h4>
+                    <h4>@item.price €</h4>
+                    <button onclick="set_order(@item.id)" class="btn btn-info get-item">GET</button>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+<div class="modal" hidden id="modal-order" style="width:900px;padding-bottom: 50px;margin-left: 200px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close" type="button" onclick="$('#modal-order').hide()">&times;</button>
+            <h3 class="text-center">ORDER</h3>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered table-responsive" id="table-order">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <label>ID Customer</label> <input type="number" id="Customer_Phone" />
+            <div class="text-center" id="btn-confirm-bill" hidden>
+                <button class="btn btn-info" onclick="confirm_bill()">Confirm Bill</button>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="modal-confirm-bill" style="width: 500px; margin-left: 350px;" hidden>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div id="result-bill" class="text-center">
+
+            </div><br />
+            <div class="text-center">
+                <button class="btn btn-success" id="btn-notification">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#btn-get-order').click(function () {
+            get_order();
+            $('#modal-order').show();
+        });
+        $('#btn-notification').click(function () {
+            location.reload();
+        });
+        var cnt = 0;
+        $('.get-item').click(function(){
+            cnt += 1;
+            $('#cart-number').text(cnt);
+        });
+        $('.get-order').click(function(){
+            cnt -= 1;
+            $('#cart-number').text(cnt);
+        });
+    })
+</script>

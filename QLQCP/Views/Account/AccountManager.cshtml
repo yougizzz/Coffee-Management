@@ -1,0 +1,348 @@
+﻿@using QLQCP.Models
+@{
+    ViewBag.Title = "AccountManager";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/Main.js"></script>
+<script src="~/scripts/CheckValidation.js"></script>
+
+
+<div class="container" style="margin-top: 150px;">
+    <h2 class="text-center">LIST ACCOUNTS</h2>
+    <br />
+    <div class="text-right">
+        <button class="btn btn-info" onclick="$('#modal-create-account').show()">Create Account</button>
+    </div><br />
+    <table class="table table-bordered table-responsive">
+        <tr class="text-center">
+            <th>Username</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+        @if (ViewBag.Account != null)
+        {
+
+            foreach (var item in ViewBag.Account)
+            {
+                if (item.role != "Manager")
+                {
+                    <tr>
+                        <td>@item.username</td>
+                        <td>@item.password</td>
+                        <td>
+                            <a href="~/Account/ResetPassword?Username=@item.username" class="btn btn-warning">Reset Password</a>
+                        </td>
+                    </tr>
+                }
+
+            }
+        }
+    </table>
+</div>
+
+
+<br /><br />
+<hr />
+<br /><br />
+
+
+<div class="container" style="padding-bottom: 150px;">
+    <h2 class="text-center">LIST STAFF INFORMATION</h2>
+    <br />
+    <div class="text-right">
+        <button class="btn btn-info" onclick="$('#modal-create-staff').show()">Create Staff Information</button>
+    </div><br />
+    <table class="table table-bordered table-responsive">
+        <tr class="text-center">
+            <th>ID</th>
+            <th>Fullname</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Promotion</th>
+            <th>Action</th>
+        </tr>
+        @if(ViewBag.Member != null)
+        {
+            List<Tuple<Account, Member>> lst = ViewBag.Member;
+            for(int i = 0; i < lst.Count; i++)
+            {
+                <tr>
+                    <td>@lst[i].Item1.username</td>
+                    <td>@lst[i].Item2.fullname</td>
+                    <td>@lst[i].Item2.gender</td>
+                    <td>@lst[i].Item2.phone</td>
+                    <td>@lst[i].Item2.email</td>
+                    <td>@lst[i].Item1.role</td>
+                    @if (@lst[i].Item1.role != "Manager")
+                    {
+                        <td>
+                            <a href="~/Account/PromoteStaff?Username=@lst[i].Item1.username" class="btn btn-info">Promote</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning" onclick="set_member('@lst[i].Item1.username')">Update</button>
+                            <a href="~/Account/DeleteMember/@lst[i].Item1.username" class="btn btn-danger">Delete</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td></td>
+                        <td></td>
+                    }
+                </tr>
+            }
+           
+        }
+    </table>
+</div>
+
+
+<br /><br />
+<hr />
+<br /><br />
+
+
+<div class="container" style="padding-bottom:150px;">
+    <br /><h2 class="text-center">LIST MEMBERSHIP</h2><br />
+    <table id="list_membership" class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>PHONE</th>
+                <th>FULL NAME</th>
+                <th>GENDER</th>
+                <th>SCORE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div class="text-center">
+        <ul class="pagination">
+            @if (ViewBag.Page != null)
+            {
+                for (int i = 1; i <= ViewBag.Page; i++)
+                {
+                    <li><a  class="page-number">@i</a></li>
+                }
+            }
+        </ul>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+<!-- MODAL CREATE ACCOUNT -->
+<div class="modal" id="modal-create-account" style="margin-left:400px; width: 400px;" hidden>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close"  onclick="$('#modal-create-account').hide()" >&times;</button>
+            <h3 class="modal-title text-center">CREATE ACCOUNT</h3>
+        </div>
+        <div class="modal-body">
+            <br />
+            <form action="~/Account/Register" method="post" class="form-horizontal">
+                <p class="text-center" style="color:red" id="valid-create-username" hidden></p>
+                <div class="input-group">
+                    <span class="input-group-addon" style="margin-left:20px;">Username</span>
+                    <input type="text" id="txt-create-username" name="Username" class="form-control col-sm-5" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Password</span>
+                    <input type="password" name="Password" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Role</span>
+                    <select class="form-control" name="Role" required>
+                        <option value=""></option>
+                        <option value="Staff">Staff</option>
+                        <option value="Manager">Manager</option>
+                    </select>
+                </div><br />
+
+                <div class="text-center">
+                    <input type="submit" id="btn-create-account" name="name" value="Create Account" class="btn btn-info" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- MODAL CREATE STAFF INFORMATION -->
+<div class="modal" id="modal-create-staff" style="margin-left:400px; width: 450px;" hidden>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" onclick="$('#modal-create-staff').hide()">&times;</button>
+            <h3 class="modal-title text-center">CREATE STAFF INFORMATION</h3>
+        </div>
+        <div class="modal-body">
+            <br />
+            <form action="~/Account/CreateMember" method="post" class="form-horizontal">
+                <p class="text-center" style="color:red;" id="valid-create-info" hidden></p>
+                <p class="text-center" style="color:red;" id="valid-duplicate-info" hidden></p>
+                <div class="input-group">
+                    <span class="input-group-addon" style="margin-left:20px;">Username</span>
+                    @if(ViewBag.Username != null)
+                    {
+                        <select name="ID_User" id="txt-create-info" class="form-control col-sm-5">
+                            <option></option>
+                            @foreach(var item in ViewBag.Username)
+                            {
+                                <option value="@item">@item</option>
+                            }
+                        </select>
+                    }
+                    
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Fullname</span>
+                    <input type="text" name="Fullname" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Gender</span>
+                    <select class="input-sm" name="Gender">
+                        <option value=""></option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Date Of Birth</span>
+                    <input type="date" name="Date_Of_Birth" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">ID Card</span>
+                    <input type="number" min="1" name="ID_Card" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Phone</span>
+                    <input type="number"  name="Phone" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Mail</span>
+                    <input type="email"  name="Email" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Address</span>
+                    <input type="text" name="Address" class="form-control" value="" required />
+                </div><br />
+
+                <div class="text-center">
+                    <input type="submit" id="btn-create-info" value="Create Information" class="btn btn-info" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- MODAL UPDATE INFORMATION -->
+<div class="modal" id="modal-update-staff" style="margin-left:400px; width: 450px;" hidden>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" onclick="$('#modal-update-staff').hide()">&times;</button>
+            <h3 class="text-center">UPDATE STAFF INFORMATION</h3>
+        </div>
+        <div class="modal-body">
+            <br />
+            <form action="~/Account/UpdateMember" method="post" class="form-horizontal">
+                <input type="hidden" name="ID" id="Id_Member" value="" />
+                <div class="input-group">
+                    <span class="input-group-addon" style="margin-left:20px;">Username</span>
+                    <input type="text" id="Username" disabled class="form-control col-sm-5" value=""  />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Fullname</span>
+                    <input type="text" name="Fullname" id="Fullname" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Gender</span>
+                    <select class="input-sm" name="Gender" id="Gender">
+                        <option value=""></option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Date Of Birth</span>
+                    <input type="date" name="Date_Of_Birth" id="Date_Of_Birth" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">ID Card</span>
+                    <input type="number" min="1" name="ID_Card" id="ID_Card" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Phone</span>
+                    <input type="number" name="Phone" id="Phone" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Mail</span>
+                    <input type="email" name="Email" id="Email" class="form-control" value="" required />
+                </div><br />
+
+                <div class="input-group">
+                    <span class="input-group-addon">Address</span>
+                    <input type="text" name="Address" id="Address" class="form-control" value="" required />
+                </div><br />
+
+                <div class="text-center">
+                    <input type="submit" name="name" value="Update Information" class="btn btn-info" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#txt-create-username').change(function () {
+            var user = $('#txt-create-username').val();
+            check_user(user);
+        });
+        $('#txt-create-info').change(function () {
+            var user = $('#txt-create-info').val();
+            check_info(user);
+        });
+        $(".page-number").click(function () {
+            var page = parseInt($(this).html());
+            change_page(page);
+        });
+        function change_page(page) {
+
+            var number = parseInt(page) || 1;
+            load_membership(number);
+        }
+        change_page();
+    })
+</script>
